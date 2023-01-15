@@ -319,34 +319,30 @@ section
     background-color: rgb(209, 209, 209);
     max-width: 100%;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.aboutSection h1 
+.aboutSection .aboutText1
 {
     color: rgb(20, 20, 20);
     position: absolute;
     font-size: 3em;
-    left: 47px;
+    right: 50%;
+}
+.aboutSection .aboutText2
+{
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 3em;
+    left: 50%;
 }
 
 .aboutSection .aboutSecText 
 {
-    position: absolute;
-    left: 47px;
-    top: 200px;
     color: rgb(20, 20, 20);
-    
     font-size: 1.25em;
-}
-
-.aboutSection .aboutSecLine 
-{
-    position: absolute;
-    top: 150px;
-    width: 340px;
-    height: 5px;
-    border: none;
-    background-color: black;
 }
 /* about section code STARTS here */
 
