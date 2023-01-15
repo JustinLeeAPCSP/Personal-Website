@@ -1,0 +1,858 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* universal changes START here */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+section
+{
+    padding: 80px 0 200px 40px;
+    min-height: 100vh;
+}
+/* universal changes ENDS here */
+
+
+
+/* menu toggle button STARTS here */
+.toggle 
+{
+    position: fixed;
+    top: 30px;
+    right: 35px;
+    width: 55px;
+    height: 55px;
+    background: url(menu.png);
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.25s;
+    z-index: 1000;
+}
+.toggle:hover 
+{
+    width: 60px;
+    height: 60px;
+    background-size: 45px;
+    background-color: #feb801;
+}
+.toggle.active 
+{
+    opacity: 1;
+    background: url(close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.toggle.active:hover 
+{
+    background-size: 30px;
+    background-color: #2fd067;
+}
+/* menu toggle button STARTS here */
+
+
+
+/* sidebar code STARTS here */
+.sidebar 
+{
+    top: 0;
+    position: fixed;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 200px 10% 100% 10%;
+    z-index: 999;
+    right: -100%;
+    max-width: max-content;
+}
+.sidebar.active 
+{
+    right: 0;
+}
+.sidebar ul 
+{
+    display: fixed;
+    align-items: center;
+    flex-direction: column;
+    justify-content: baseline;
+}
+.sidebar ul li 
+{
+    list-style: none;
+}
+.sidebar ul li a 
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 10px 0;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: .5s
+}
+.sidebar ul li .homeSidebar:hover 
+{
+    transition: .1s;
+    color: #00bcd4;
+    font-size: 2.1em;
+}
+.sidebar ul li .aboutSidebar:hover 
+{
+    transition: .1s;
+    color: #2fd067;
+    font-size: 2.1em;
+}
+.sidebar ul li .servicesSidebar:hover 
+{
+    transition: .1s;
+    color: #feb801;
+    font-size: 2.1em;
+}
+.sidebar ul li .projectsSidebar:hover 
+{
+    transition: .1s;
+    color: #2fd067;
+    font-size: 2.1em;
+}
+.sidebar ul li .contactSidebar:hover 
+{
+    transition: .1s;
+    color: #00bcd4;
+    font-size: 2.1em;
+}
+/* sidebar code ENDS here */
+
+
+
+/* languages sticky button STARTS here */
+.langIcon 
+{
+    position: fixed;
+    top: 25px;
+    left: 40px;
+    font-size: 2.5rem;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    padding: 0 5px;
+    transition: 0.25s;
+    z-index: 999;
+}
+.langIcon:hover 
+{
+    text-shadow: 0 0 60px #fff;
+    cursor: pointer;
+}
+/* languages sticky button ENDS here */
+
+
+
+/* home page code STARTS here */
+.banner 
+{
+    background-color: #222;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 2;
+}
+.banner .contentBx .sidebar
+{
+    top: 0;
+    right: 0;
+    width: calc(100% - 500px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+.banner .contentBx h4 
+{
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 300;
+}
+.banner .contentBx h4 .spanHello 
+{
+    color: #00bcd4;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.banner .contentBx h4 .spanFront 
+{
+    color: #2fd067;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.banner .contentBx h4 .spanWebDev
+{
+    color: #feb801;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.banner .contentBx h2 
+{
+    font-size: 3em;
+    color: #fff;
+    line-height: 1em;
+}
+.banner .contentBx .bannerText 
+{
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+/* home page code ENDS here */
+
+
+
+/* Moving Icons in Background STARTS here */
+.iconsBg 
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: -1;
+    overflow: hidden;
+}
+.iconsBg .row 
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    white-space: nowrap;
+    font-size: 64px;
+    user-select: none;
+    transform: rotate(-10deg);
+}
+.iconsBg .row i 
+{
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    padding: 0 5px;
+    user-select: none;
+    cursor: default;
+}
+.iconsBg .row div 
+{
+    animation: bgAnimate1 80s linear infinite;
+    animation-delay: -80s;
+}
+.iconsBg .row div:nth-child(2) 
+{
+    animation: bgAnimate2 80s linear infinite;
+    animation-delay: -40s;
+}
+.iconsBg .row:nth-child(even) div
+{
+    animation: bgAnimate3 80s linear infinite;
+    animation-delay: -80s;
+}
+.iconsBg .row:nth-child(even) div:nth-child(2)
+{
+    animation: bgAnimate4 80s linear infinite;
+    animation-delay: -40s;
+}
+@keyframes bgAnimate1 
+{
+    0% { 
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes bgAnimate2 
+{
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+@keyframes bgAnimate3 
+{
+    0% { 
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes bgAnimate4 
+{
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Moving Icons in Background ENDS here */
+
+
+
+/* about section code STARTS here */
+.aboutSection 
+{
+    position: relative;
+    background-color: rgb(209, 209, 209);
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.aboutSection h1 
+{
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 3em;
+    left: 47px;
+}
+
+.aboutSection .aboutSecText 
+{
+    position: absolute;
+    left: 47px;
+    top: 200px;
+    color: rgb(20, 20, 20);
+    
+    font-size: 1.25em;
+}
+
+.aboutSection .aboutSecLine 
+{
+    position: absolute;
+    top: 150px;
+    width: 340px;
+    height: 5px;
+    border: none;
+    background-color: black;
+}
+/* about section code STARTS here */
+
+
+
+/* services section code STARTS here */
+.serviceSection {
+    background-color: #222;
+}
+.serviceSection .servicesText {
+    position: absolute;
+    right: 50%;
+    color:rgb(209, 209, 209);
+    font-size: 3em;
+    padding: 0 5px 0 0;
+}
+.serviceSection .servicesText2 {
+    position: absolute;
+    left: 50%;
+    color:rgb(209, 209, 209);
+    font-size: 3em;
+    padding: 0 0 0 5px
+
+}
+
+    /* services section CARDS code STARTS here */
+.largerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    background:#222;
+}
+
+.largerContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    background: #222;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    padding: 200px 40px 0 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.container2 {
+    position: relative;
+    padding: 100px 40px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 180px;
+    background:  #000;
+    transition: 0.5s;
+}
+
+.card:hover {
+    height: 450px;
+}
+
+.card .lines {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.card .lines::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+    animation: animate 4s linear infinite;
+    animation-play-state: paused;
+}
+
+.card:hover .lines::before {
+    animation-play-state: running;
+}
+
+@keyframes animate 
+{
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.card .lines::after {
+    content: '';
+    position: absolute;
+    inset:3px;
+    background: #292929;
+}
+
+.card .imgBx
+{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translateX(-50%);
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .imgBx {
+    top: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.card .imgBx::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    transform: translate(-50%, -50%);
+    animation: animate2 6s linear infinite;
+    animation-play-state: paused;
+}
+
+.card:hover .imgBx::before {
+    animation-play-state: running;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translate( -50%, -50%) rotate(360deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.card .imgBx::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+
+}
+
+.card .imgBx img {
+    max-width: 100px;
+    position: absolute;
+    z-index: 1;
+
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.card:hover .imgBx img {
+    max-width: 150px;
+    opacity: 1;
+}
+
+.card .content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+
+}
+
+.card .content .details
+{
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+
+}
+
+.card:hover .content .details {
+    transform: translateY(0px);
+}
+
+.card .content .details .webDes,
+.card .content .details .webDev,
+.card .content .details .softDev,
+.card .content .details .art,
+.card .content .details .photograph,
+.card .content .details .vidEdit {
+    position: absolute;
+    top: -65px;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+.card .content .details .webDes {
+    left: 102.5px;
+    color: #45f3ff;
+}
+
+.card .content .details .webDev {
+    left: 65px;
+    color: #feb801;
+}
+
+.card .content .details .softDev {
+    left: 40px;
+    color: #2fd067;
+}
+
+.card .content .details .art {
+    left: 150px;
+    color: #45f3ff;
+}
+
+.card .content .details .photograph {
+    left: 97px;
+    color: #feb801;
+}
+
+.card .content .details .vidEdit {
+    left: 96.5px;
+    color: #2fd067;
+}
+
+.card .content .details p {
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover .content .details p {
+    opacity: 1;
+}
+
+.card .content .details a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #45f3ff;
+    color: #292929;
+    margin-top: 500;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.card:hover .content .details a {
+    opacity: 1;
+}
+    /* services section CARDS code STARTS here */
+/* services section code ENDS here */
+
+
+
+
+/* all colored buttons on each page STARTS here */
+.abtMeBtn 
+{
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.servicesBtn 
+{
+    position: absolute;
+    background: #2fd067;
+    color: #fff;
+    top: 500px;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+/* all colored buttons on each page ENDS here */
+
+
+
+/* Moving Road in Background STARTS here */
+.road 
+{
+    background: linear-gradient(
+        to bottom,
+        rgb(209, 209, 209),
+        #222
+    )
+}
+.infinite 
+{
+    top: 250px;
+    left: 20%;
+    position: relative;
+    justify-content: center;
+    width: 57%;
+    height: 160px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+    z-index: 2;
+}
+.infinite:before 
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+    background-size: 120px;
+    animation: animateRoad 0.5s linear infinite;
+}
+.infinite::after 
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background:#333;
+    bottom: -30px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+}
+.infinite:hover 
+{
+    opacity: 0;
+    box-shadow: 0 0 500px #feb801;
+}
+.yellowInfinite 
+{
+    opacity: 0;
+    top: 90px;
+    left: 20%;
+    position: relative;
+    justify-content: center;
+    width: 57%;
+    height: 160px;
+    background: #feb801;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+    z-index: 3;
+}
+.yellowInfinite:before 
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #feb801 70%, #feb801 100%);
+    background-size: 120px;
+    animation: animateRoad 0.5s linear infinite;
+}
+.yellowInfinite::after 
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background:#bc8801;
+    bottom: -30px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+}
+.yellowInfinite:hover 
+{
+    opacity: 1;
+    box-shadow: 0 0 500px #feb801;
+}
+@keyframes animateRoad 
+{
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: -120px;
+    }
+}
+/* Moving road in background ENDS here */
+
+.contacts {
+    margin: 0;
+    padding: 0;
+    min-height: 50vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #222, #000);
+}
+
+.contactsText {
+    position: absolute;
+    right: 50%;
+    padding: 0 5px 0 0;
+    color:rgb(209, 209, 209);
+    font-size: 3em;
+}
+.contactsText2 {
+    position: absolute;
+    left: 50%;
+    padding: 0 0 0 5px;
+    color:rgb(209, 209, 209);
+    font-size: 3em;
+}
+
+.containerContact {
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactList {
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+
+.contactList .contactListItems {
+    position: relative;
+    list-style:none;
+    margin: 10px;
+}
+
+.contactList .contactListItems .contactListLinks {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: #fff;
+    border:1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow:hidden;
+}
+
+.contactList .contactListItems .contactListLinks:hover {
+    transform: translateY(-20px);
+    color: #00bcd4;
+    box-shadow: 0 0 160px #00bcd4;
+}
+
+.contactList .contactListItems .contactListLinks::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+
+}
+
+.contactList .contactListItems .contactListLinks:hover::before {
+    transform: skewX(45deg) translateX(-150px);
+}
