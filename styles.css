@@ -9,6 +9,7 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    cursor: none;
 }
 section
 {
@@ -17,6 +18,16 @@ section
 }
 /* universal changes ENDS here */
 
+
+/* cursor change code STARTS here */
+#cursorDesign {
+    position: absolute;
+    font-size: 30px;
+    color:#ff3c7b;
+    pointer-events: none;
+    z-index: 9999;
+}
+/* cursor change code ENDS here */
 
 
 /* menu toggle button STARTS here */
@@ -31,7 +42,6 @@ section
     background-size: 40px;
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer;
     transition: 0.25s;
     z-index: 1000;
 }
@@ -151,7 +161,6 @@ section
 .langIcon:hover 
 {
     text-shadow: 0 0 60px #fff;
-    cursor: pointer;
 }
 /* languages sticky button ENDS here */
 
@@ -223,9 +232,9 @@ section
 {
     position: absolute;
     left: 0;
-    top: -50px;
+    top: 0;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     background: linear-gradient(to bottom, #222, rgb(209, 209, 209));
     display: flex;
     flex-direction: column;
@@ -250,7 +259,6 @@ section
     transition: 1s;
     padding: 0 5px;
     user-select: none;
-    cursor: default;
 }
 .iconsBg .row div 
 {
@@ -319,9 +327,6 @@ section
     background-color: rgb(209, 209, 209);
     max-width: 100%;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .aboutSection .aboutText1
@@ -330,6 +335,7 @@ section
     position: absolute;
     font-size: 3em;
     right: 50%;
+    padding: 1.5px 5px 0 0;
 }
 .aboutSection .aboutText2
 {
@@ -337,15 +343,66 @@ section
     position: absolute;
     font-size: 3em;
     left: 50%;
+    padding: 0 0 0 5px;
 }
 
 .aboutSection .aboutSecText 
 {
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
     color: rgb(20, 20, 20);
     font-size: 1.25em;
+    top: 35%;
+    max-width: 40%;
+    z-index: 0;
+}
+
+.aboutSection .aboutImage {
+    position: absolute;
+    top: 35%;
+    right: 2.5%;
+    width: 47.5%;
+    z-index: 1;
+}
+
+.aboutSection .resume {
+    position: absolute;
+    left: 12%;
+    bottom: 25%;
+    transform: rotate(-70deg);
+}
+
+.aboutSection .resumeImg {
+    position: absolute;
+    bottom: 18%;
+    left: 21%;
+    font-size: 75px;
+    transform: rotate(-20deg);
+    color: #000;
+    text-decoration: none;
+    z-index: 1;
+    transition: .5s;
+}
+
+.aboutSection .arrowImg {
+    position: absolute;
+    bottom: 13%;
+    left: 20%;
+    font-size: 75px;
+    transform: rotate(50deg);
+    text-decoration: none;
+    color: white;
+    z-index: 1;
+    transition: .5s;
+}
+.aboutSection .arrowImg:hover {
+    transition: .5s;
+    font-size: 80px;
+    transform: rotate(40deg);
+}
+.aboutSection .resumeImg:hover {
+    transition: .5s;
+    font-size: 80px;
+    transform: rotate(-10deg);
 }
 /* about section code STARTS here */
 
@@ -641,20 +698,18 @@ section
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 2px;
-    cursor: pointer;
 }
 .servicesBtn 
 {
     position: absolute;
     background: #2fd067;
     color: #fff;
-    top: 500px;
+    bottom: 20%;
     padding: 10px 30px;
     display: inline-block;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 2px;
-    cursor: pointer;
 }
 /* all colored buttons on each page ENDS here */
 
